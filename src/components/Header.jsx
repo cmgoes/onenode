@@ -24,15 +24,15 @@ export default function Header(props) {
           <img src={hamburgerActive} alt="hamburger" />
         )}
       </button>
-      <a href="/#" className="flex gap-x-2 items-center justify-between flex-grow">
-        <div className="flex items-center gap-x-2">
+      <div className="flex gap-x-2 items-center justify-between flex-grow">
+        <a href="/#" className="flex items-center gap-x-2">
           <img src={logo} alt="site logo" />
           <span className="text-2xl font-bold leading-none sr-only lg:not-sr-only heading">
             Minswap
           </span>        
-        </div>
+        </a>
         <Web3Status />
-      </a>
+      </div>
     </header>
   );
 }

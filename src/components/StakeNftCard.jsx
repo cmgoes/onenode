@@ -1,7 +1,7 @@
 import { constants } from "ethers";
 import {useState} from 'react';
 import {UseApprove, UseAllowance} from "../hooks/useApprove";
-import {UseStake, UseUnStake, UseClaim} from "../hooks/useStake";
+import {UseStake, UseUnStake, UseClaim, UseCalculateReward} from "../hooks/useStake";
 
 import useMetaMask from "../hooks/useMetamask";
 
@@ -50,7 +50,7 @@ export default function StakeNftCard(props) {
         <div className="claimRewardsCntr">
           <div className="claimRewardsData">
             <div className="claimRewardsHeader">WETH Earned</div>
-            <div className="claimRewardsValue"></div>
+            <div className="claimRewardsValue">{UseCalculateReward(props.stake, account)}</div>
           </div>
           <div className="claimBtnCntr">
           {account? <div className="btn fantom" onClick={usehandleClaim}>Claim</div> : <div className="btn fantom">Claim</div>}
