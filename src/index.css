@@ -155,6 +155,10 @@ code {
   background-color:  rgb(60, 189, 248);
 }
 
+.claim {
+  background-color: #f5ac39;
+}
+
 .pumpkin {
   background-color: rgb(247, 110, 133);
 }
@@ -392,7 +396,7 @@ input:focus {
   z-index: 20;
   position: fixed;
   left: 0px;
-  top: 56px;
+  top: 66px;
   display: none;
 }
 

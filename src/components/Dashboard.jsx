@@ -1,5 +1,10 @@
 import { ethers } from "ethers";
-import RegisterABI from "../constants/abis/fantomregister.json";
+
+import FantomRegisterABI from "../constants/abis/fantomregister.json";
+// import PumpkinRegisterABI from "../constants/abis/pumpkinregister.json";
+// import TombRegisterABI from "../constants/abis/tombregister.json";
+// import DaiRegisterABI from "../constants/abis/dairegister.json";
+
 import { FantomRegisterNFTAddress } from "../constants/contracts";
 import { PumpkinRegisterNFTAddress } from "../constants/contracts";
 import { TombRegisterNFTAddress } from "../constants/contracts";
@@ -9,13 +14,13 @@ import RegisterNft from "./RegisterNftCard.jsx";
 import daiIcon from "../assets/dai.png";
 import fantomIcon from "../assets/fantom.png";
 import pumpkinIcon from "../assets/pumpkin.png";
-import tombIcon from "../assets/tomb.jpeg";
+import tombIcon from "../assets/tomb.png";
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
-const FantomRegisterContract = new ethers.Contract(FantomRegisterNFTAddress, RegisterABI, provider);
-const PumpkinRegisterContract = new ethers.Contract(PumpkinRegisterNFTAddress, RegisterABI, provider);
-const TombRegisterContract = new ethers.Contract(TombRegisterNFTAddress, RegisterABI, provider);
-const DaiRegisterContract = new ethers.Contract(DaiRegisterNFTAddress, RegisterABI, provider);
+const FantomRegisterContract = new ethers.Contract(FantomRegisterNFTAddress, FantomRegisterABI, provider);
+const PumpkinRegisterContract = new ethers.Contract(PumpkinRegisterNFTAddress, FantomRegisterABI, provider);
+const TombRegisterContract = new ethers.Contract(TombRegisterNFTAddress, FantomRegisterABI, provider);
+const DaiRegisterContract = new ethers.Contract(DaiRegisterNFTAddress, FantomRegisterABI, provider);
 
 export default function Dashboard(props) {
   return (
@@ -24,8 +29,10 @@ export default function Dashboard(props) {
         <div className="infoCardHeading">Dashboard</div>
         <div className="infoCardData">
           <div className="infoCardText">
-            Earn rewards by staking your NFTs to different plans and get
-            respective rewards. Just register to the plans and get rewards.
+          90% of rewards are generated through the Binance exchange staking and locked 
+          staking programs 10% of rewards are generated through an auto-trading bot operating on the Binance exchange 
+          <br /><br />
+          to request a Monthly PNL report email us at  : vplug10@gmail.com             NOTE : reports are only available at the end of every month
           </div>
           {/* <div className="actionAllBtnCntr">
             <div className="btn fantom" style={{ "margin-top": "10px" }}>

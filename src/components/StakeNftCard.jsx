@@ -41,11 +41,11 @@ export default function StakeNftCard(props) {
         </div>
         <div className="dataItem">
           <div className="dataItemHeader">Locking Period:</div>
-          <div className="dataItemVal">17 days</div>
+          <div className="dataItemVal">{props.lockingperiod}</div>
         </div>
         <div className="dataItem">
           <div className="dataItemHeader">APR:</div>
-          <div className="dataItemVal">15%</div>
+          <div className="dataItemVal">{props.apy}</div>
         </div>
         <div className="claimRewardsCntr">
           <div className="claimRewardsData">
@@ -53,7 +53,7 @@ export default function StakeNftCard(props) {
             <div className="claimRewardsValue">{UseCalculateReward(props.stake, account)}</div>
           </div>
           <div className="claimBtnCntr">
-          {account? <div className="btn fantom" onClick={usehandleClaim}>Claim</div> : <div className="btn fantom">Claim</div>}
+          {account? <div className="btn claim" onClick={usehandleClaim}>Claim</div> : <div className="btn claim">Claim</div>}
           </div>
         </div>
         <div className="stakeInputCntr">
@@ -61,9 +61,9 @@ export default function StakeNftCard(props) {
         </div>
         <div className={"stakeBtnCntr"}>
           {UseAllowance(props.approve, account, props.stakeaddress) > inputValue? 
-          [account? [inputValue > 0? <div className="btn fantom" onClick={usehandleStake}>Stake</div> : <div className="btn fantom">Stake</div>] : <div className="btn fantom">Stake</div>] : 
-          [account? <div className="btn fantom" onClick={usehandleApprove}>Approve</div> : <div className="btn fantom">Approve</div>]}            
-          {account? <div className="btn fantom" onClick={usehandleUnstake}>Unstake</div> : <div className="btn fantom">Unstake</div>}
+          [account? [inputValue > 0? <div className="btn claim" onClick={usehandleStake}>Stake</div> : <div className="btn claim">Stake</div>] : <div className="btn claim">Stake</div>] : 
+          [account? <div className="btn claim" onClick={usehandleApprove}>Approve</div> : <div className="btn claim">Approve</div>]}            
+          {account? <div className="btn claim" onClick={usehandleUnstake}>Unstake</div> : <div className="btn claim">Unstake</div>}
         </div>
       </div>
     </div>

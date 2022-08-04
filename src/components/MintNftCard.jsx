@@ -20,11 +20,13 @@ export default function MintNftCard(props) {
                 </div>
                 <div className="dataItem">
                     <div className="dataItemHeader">Minted:</div>
-                    {account? <div className="dataItemVal">{UseBalanceOf(props.contract, account)}</div> : 
+                    {account? [!props.upcoming? <div className="dataItemVal">{UseBalanceOf(props.contract, account)}</div> :
+                    <div className="dataItemVal"></div>] : 
                     <div className="dataItemVal"></div>}
                 </div>
-                {account? <div className={"btn fantom"} onClick={usehandleMint} style={{"border-radius": "5px", "display":"flex", "justify-content": "center"}}> Mint </div> : 
-                <div className={"btn fantom"} style={{"border-radius": "5px", "display":"flex", "justify-content": "center", pointerEvents: 'none'}}> Mint </div>}                
+                {account? [!props.upcoming? <div className={"btn fantom"} onClick={usehandleMint} style={{borderRadius: "5px", "display":"flex", justifyContent: "center"}}> Mint </div> :
+                <div className={"btn fantom"} style={{borderRadius: "5px", "display":"flex", justifyContent: "center", pointerEvents: 'none'}}> Mint </div>] : 
+                <div className={"btn fantom"} style={{borderRadius: "5px", "display":"flex", justifyContent: "center", pointerEvents: 'none'}}> Mint </div>}                
             </div>
         </div>
     );

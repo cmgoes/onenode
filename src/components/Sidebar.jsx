@@ -33,6 +33,8 @@ export default function Sidebar(props) {
             IconElement={MoreIcon}
             text="More"
             // classname={"active"}
+            classname={location.pathname === "/" ? "active" : ""}
+            redirectLink={"https://www.1out100.com/"}
           />
         </ul>
       </div>

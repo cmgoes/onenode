@@ -39,7 +39,9 @@ export default function Navigator(props) {
             IconElement={MoreIcon}
             text="More"
             // classname={"active"}
-          />
+            classname={location.pathname === "/" ? "active" : ""}
+            redirectLink={"https://www.1out100.com/"}
+          />            
         </ul>
       </nav>
       {props.openSidebar === true && <Sidebar />}

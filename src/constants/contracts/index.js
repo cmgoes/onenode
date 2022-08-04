@@ -1,10 +1,13 @@
-export const MKSContractAddress = "0x206fa4f5e7c274858398c49d3278d923b3ac261b";
-export const FantomRegisterNFTAddress = "0x74c359cF93eb89f06A0d8ba28d4BfB2EB235F7e3";
-export const PumpkinRegisterNFTAddress = "0x5e1f25D724B47D0eB4bcc8f36Bd4CA27Da324AEB";
-export const TombRegisterNFTAddress = "0x79DCA63BB39620fa2d8C7a4A40B4193192b2859C";
-export const DaiRegisterNFTAddress = "0xA1E9fD96788aEEa64781f95F67E8DbDcF15e334c";
-export const NokoContractAddress = "0x84d57090233f5e7E03A22428adDB2B801B52a4fA";
-export const StakeContractOneAddress = "0xD83069CbB3870E71724acF3d66ff7407192B3642";
+export const KeyContractAddress = "0x0a1e2B30e23d89EA44669F40C49f2D80E3C9beAA";
+export const LootBoxContractAddress = "0xC5217de848035e7E35984a6dCfb1678760601c97";
+export const FantomRegisterNFTAddress = "0x2520f15130DE62D3E65127dd6e4F5C2D7A8F05E6";
+export const PumpkinRegisterNFTAddress = "0xc38f753f581e121aB21b73cd2C4FD96d15A21b17";
+export const TombRegisterNFTAddress = "0x13fb2a8C98c122d5660e10e0354bf44f9717E504";
+export const DaiRegisterNFTAddress = "0xF80de1DfCf6F944b7a44c9627792fF0333917258";
+export const RewardContractAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
+export const DaiStakeOneContractAddress = "0xc58bD5c11ca40A742Dd6eAa29Fe4d7bD1E50F098";
+export const DaiStakeTwoContractAddress = "0x891126d2477a4De3892b178CdD76C5E9076EafC8";
+
 
 
 
