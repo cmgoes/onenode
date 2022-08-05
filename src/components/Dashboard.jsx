@@ -32,7 +32,9 @@ export default function Dashboard(props) {
           90% of rewards are generated through the Binance exchange staking and locked 
           staking programs 10% of rewards are generated through an auto-trading bot operating on the Binance exchange 
           <br /><br />
-          to request a Monthly PNL report email us at  : vplug10@gmail.com             NOTE : reports are only available at the end of every month
+          to request a Monthly PNL report email us at  : vplug10@gmail.com    
+          <br />         
+          NOTE : reports are only available at the end of every month
           </div>
           {/* <div className="actionAllBtnCntr">
             <div className="btn fantom" style={{ "margin-top": "10px" }}>

@@ -15,7 +15,7 @@ export default function Header(props) {
     <header className="w-full h-13 bg-white  items-center border-bottom-2 flex lg:px-7 py-2 px-5 z-40 gap-x-2">
       <button
         onClick={() => toggleNavbar()}
-        className="flex items-center justify-center leading-none whitespace-nowrap select-none hover:opacity-80 text-current w-10 h-12 lg:hidden"
+        className="flex items-center justify-center leading-none whitespace-nowrap select-none hover:opacity-80 text-current w-10 h-10 lg:hidden"
         aria-label="Menu"
       >
         {!openNavbar ? (

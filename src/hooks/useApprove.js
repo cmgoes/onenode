@@ -23,3 +23,21 @@ export const UseAllowance = (contract, account, spender) => {
  }, [allowance])
   return temp;
 }
+
+export const UseBalanceOf = (contract, account) => {
+  const [totalNum, setTotalNum] = useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      if(account) {
+        const totalNum_ = await contract.balanceOf(account);
+        setTotalNum(totalNum_._hex);
+      }      
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [account]);
+  let temp = useMemo(() => {
+    return totalNum / 10**18;
+  }, [totalNum])
+  return temp;  
+}

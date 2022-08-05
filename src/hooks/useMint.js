@@ -1,11 +1,10 @@
 import { ethers } from "ethers";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
-export const UseMint = async (contract, account, amount) => {  
-  const currency = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
-  const pricepertoken = 0;  
+export const UseMint = async (contract, account, amount, mintprice) => {  
+  const currency = '0xAD522217E64Ec347601015797Dd39050A2a69694';   
   const proofs = ['0x0000000000000000000000000000000000000000000000000000000000000000'];
   console.log("proofs", proofs, typeof proofs)
   const maxquantity = 0;  
@@ -13,22 +12,28 @@ export const UseMint = async (contract, account, amount) => {
     account, 
     amount, 
     currency, 
-    pricepertoken, 
+    (mintprice*10**18).toString(), 
     proofs, 
-    maxquantity,
-    { value: ethers.utils.parseEther("0.01") }
+    maxquantity
+    // { value: ethers.utils.parseEther("0.01") }
   );       
 }
 
-export const UseBalanceOf = (contract, account) => {
+export const UseNFTBalanceOf = (contract, account) => {
   const [totalNum, setTotalNum] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      const totalNum_ = await contract.balanceOf(account);
-      setTotalNum(totalNum_);
+      if(account) {
+        const totalNum_ = await contract.balanceOf(account);
+        setTotalNum(totalNum_);
+      }      
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
-  return ethers.BigNumber.from(totalNum).toNumber();
+  let temp = useMemo(() => {
+    return totalNum.toString();
+  }, [totalNum])
+  return temp;  
 }
+

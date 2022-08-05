@@ -7,9 +7,8 @@ export const DaiRegisterNFTAddress = "0xF80de1DfCf6F944b7a44c9627792fF0333917258
 export const RewardContractAddress = "0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E";
 export const DaiStakeOneContractAddress = "0xc58bD5c11ca40A742Dd6eAa29Fe4d7bD1E50F098";
 export const DaiStakeTwoContractAddress = "0x891126d2477a4De3892b178CdD76C5E9076EafC8";
-
-
-
+export const PumpkinContractAddress = "0xAD522217E64Ec347601015797Dd39050A2a69694";
+export const NodeContractAddress = "0x4d490C2031964C495bFD50D5Bc988516764b314e";
 
 
 

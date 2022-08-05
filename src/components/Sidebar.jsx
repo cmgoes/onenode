@@ -31,7 +31,7 @@ export default function Sidebar(props) {
           />
           <NavItem
             IconElement={MoreIcon}
-            text="More"
+            text="Home"
             // classname={"active"}
             classname={location.pathname === "/" ? "active" : ""}
             redirectLink={"https://www.1out100.com/"}

@@ -14,21 +14,28 @@ export const UseMultiplier = (account, contract) => {
   const [totalMultiplier, setTotalMultiplier] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      const totalMultiplier_ = await contract.GetMultiplier(account);
-      setTotalMultiplier(totalMultiplier_);
+      if(account) {
+        const totalMultiplier_ = await contract.GetMultiplier(account);
+       setTotalMultiplier(totalMultiplier_);
+      }      
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account]);
-  return ethers.BigNumber.from(totalMultiplier).toNumber();
+  let temp = useMemo(() => {
+    return totalMultiplier.toString();
+  }, [totalMultiplier])  
+  return temp;  
 }
 
-export const UseUnclaimedRewards = (account, contract) => {
+export const UseUnclaimedRewards = (contract, account) => {
   const [totalUnclaimedRewards, setTotalUnclaimedRewards] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      const totalUnclaimedRewards_ = await contract.CheckUnclaimedRewards(account);      
-      setTotalUnclaimedRewards(totalUnclaimedRewards_._hex);
+      if(account) {
+        const totalUnclaimedRewards_ = await contract.CheckUnclaimedRewards(account);      
+        setTotalUnclaimedRewards(totalUnclaimedRewards_._hex);
+      }      
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps

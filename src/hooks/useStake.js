@@ -18,38 +18,38 @@ export const UseClaim = async(contract) => {
   await contract.connect(provider.getSigner()).claim();
 }
 
-// export const UseAllowance = (contract, account, spender) => {
-//   const [allowance, setAllowance] = useState(0);  
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       if (account) {        
-//         const allowance_ = await contract.allowance(account, spender);
-//         setAllowance(allowance_._hex);
-//       }
-//     }
-//     fetchData();
-//     // eslint-disable-next-line react-hooks/exhaustive-deps    
-//   }, [account]);
-//   let temp = useMemo(() => {
-//     return allowance / 10**18;
-//  }, [allowance])
-//   return temp;
-// }
-
 export const UseCalculateReward = (contract, account) => {
   const [reward, setReward] = useState(0);  
   useEffect(() => {
     const fetchData = async () => {
       if (account) {        
         const reward_ = await contract.CalculateReward(account);
-        setReward(reward_._hex);
+        setReward(reward_);
       }
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps    
   }, [account]);
   let temp = useMemo(() => {
-    return reward / 10**18;
+    return reward.toString();
  }, [reward])
+  return temp;
+}
+
+export const UseCalculateStaked = (contract, account) => {
+  const [staked, setStaked] = useState(0);  
+  useEffect(() => {
+    const fetchData = async () => {
+      if (account) {        
+        const staked_ = await contract.StakedTokens(account);
+        setStaked(staked_._hex);
+      }
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps    
+  }, [account]);
+  let temp = useMemo(() => {
+    return staked / 10**18;
+ }, [staked])
   return temp;
 }
