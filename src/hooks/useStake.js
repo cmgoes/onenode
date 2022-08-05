@@ -24,14 +24,14 @@ export const UseCalculateReward = (contract, account) => {
     const fetchData = async () => {
       if (account) {        
         const reward_ = await contract.CalculateReward(account);
-        setReward(reward_);
+        setReward(reward_._hex);
       }
     }
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps    
   }, [account]);
   let temp = useMemo(() => {
-    return reward.toString();
+    return reward / 10**18;
  }, [reward])
   return temp;
 }

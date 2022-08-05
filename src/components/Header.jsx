@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../App.css";
 
 import Web3Status from "./Web3Status";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import hamburger from "../assets/hamburger.svg";
 import hamburgerActive from "../assets/hamburgerActive.svg";
 export default function Header(props) {

@@ -29,12 +29,13 @@ export default function Dashboard(props) {
         <div className="infoCardHeading">Dashboard</div>
         <div className="infoCardData">
           <div className="infoCardText">
-          90% of rewards are generated through the Binance exchange staking and locked 
-          staking programs 10% of rewards are generated through an auto-trading bot operating on the Binance exchange 
-          <br /><br />
-          to request a Monthly PNL report email us at  : vplug10@gmail.com    
-          <br />         
-          NOTE : reports are only available at the end of every month
+            90% of rewards are generated through the Binance exchange staking and locked staking programs
+            <br />
+            10% of rewards are generated through an auto-trading bot operating on the Binance exchange 
+            <br /><br />
+            <strong>to request a Monthly PNL report email us at  : vplug10@gmail.com</strong>    
+            <br />         
+            <strong>NOTE : reports are only available at the end of every month</strong>
           </div>
           {/* <div className="actionAllBtnCntr">
             <div className="btn fantom" style={{ "margin-top": "10px" }}>

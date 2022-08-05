@@ -25,7 +25,7 @@ export default function RegisterNft(props) {
 
   const usehandleRegister = async () => {  
     if(balance === '0') {
-      setWaitingBox(waitingComponent("Y do not have any nfts to register"));
+      setWaitingBox(waitingComponent("You do not have any nfts to register"));
       setTimeout(function(){
         setWaitingBox(emptyComponent)
       }, 1000);
@@ -36,7 +36,7 @@ export default function RegisterNft(props) {
 
   const usehandleClaim = async () => {   
     if(reward === '0.0000000') {
-      setWaitingBox(waitingComponent("Y do not have any registered nfts"));
+      setWaitingBox(waitingComponent("You do not have any registered nfts"));
       setTimeout(function(){
         setWaitingBox(emptyComponent)
       }, 1000);

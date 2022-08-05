@@ -38,8 +38,8 @@ export default function StakeNftCard(props) {
   };
 
   const usehandleUnstake = async () => {    
-    if(reward === '0') {
-      setWaitingBox(waitingComponent("You didn't staked yet!"));
+    if(reward === 0) {
+      setWaitingBox(waitingComponent("You didn't stake yet!"));
       setTimeout(function(){
         setWaitingBox(emptyComponent)
       }, 1000); 
@@ -50,7 +50,7 @@ export default function StakeNftCard(props) {
 
   const usehandleClaim = async () => {
     if(reward === '0') {
-      setWaitingBox(waitingComponent("You didn't staked yet!"));
+      setWaitingBox(waitingComponent("You didn't stake yet!"));
       setTimeout(function(){
         setWaitingBox(emptyComponent)
       }, 1000); 
@@ -89,7 +89,7 @@ export default function StakeNftCard(props) {
         <div className="claimRewardsCntr">
           <div className="claimRewardsData">
             <div className="claimRewardsHeader">DAI Earned</div>
-            <div className="claimRewardsValue">{UseCalculateReward(props.stake, account)}</div>
+            <div className="claimRewardsValue">{reward}</div>
           </div>
           <div className="claimBtnCntr">
           {account? <div className="btn claim" onClick={usehandleClaim}>Claim</div> : <div className="btn claim">Claim</div>}
