@@ -18,7 +18,7 @@ export default function Stake(props) {
   return (
     <div className="flex flex-col container lg:px-10 h-[100%]">
       <div className="stakeNftCntr">
-        <StakeNftCard icon={dai} lockingperiod="15 days" apy="20.43%" approve={RewardContract} stake={StakeOneContract} stakeaddress={DaiStakeOneContractAddress}/>
+        <StakeNftCard icon={dai} lockingperiod="15 days" apy="14.71%" approve={RewardContract} stake={StakeOneContract} stakeaddress={DaiStakeOneContractAddress}/>
         <StakeNftCard icon={dai} lockingperiod="30 days" apy="29.60%" approve={RewardContract} stake={StakeTwoContract} stakeaddress={DaiStakeTwoContractAddress}/>
       </div>
     </div>

@@ -25,8 +25,7 @@ export default function StakeNftCard(props) {
       setTimeout(function(){
         setWaitingBox(emptyComponent)
       }, 1000);
-    } 
-    else if (inputValue > balance) {  
+    } else if (inputValue > balance) {  
       setWaitingBox(waitingComponent("Insufficient amount!"));
       setTimeout(function(){
         setWaitingBox(emptyComponent)
@@ -80,7 +79,7 @@ export default function StakeNftCard(props) {
           <div className="dataItemVal">{props.lockingperiod}</div>
         </div>
         <div className="dataItem">
-          <div className="dataItemHeader">APR:</div>
+          <div className="dataItemHeader">APY:</div>
           <div className="dataItemVal">{props.apy}</div>
         </div>
         <div className="dataItem">
