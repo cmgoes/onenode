@@ -26,7 +26,7 @@ export default function MintNftCard(props) {
             setTimeout(function(){
                 setWaitingBox(emptyComponent)
             }, 1000);
-        } else if(nftbalance === '1') {
+        } else if(nftbalance === '1' && props.mintprice === 20) {
             setWaitingBox(waitingComponent("Already minted one no more mint!"));
             setTimeout(function(){
                 setWaitingBox(emptyComponent)
