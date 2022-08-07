@@ -1,11 +1,11 @@
 import DashboardIcon from "../assets/DashboardIcon.jsx";
-import DiamondIcon from "../assets/DiamondIcon.jsx";
+// import DiamondIcon from "../assets/DiamondIcon.jsx";
 import MoreIcon from "../assets/MoreIcon.jsx";
-import FaqIcon from "../assets/FaqIcon.jsx";
+// import FaqIcon from "../assets/FaqIcon.jsx";
 import NavItem from "./NavItem.jsx";
 import Dashboard from "./Dashboard.jsx";
-import Mint from "./Mint.jsx";
-import Stake from "./Stake.jsx";
+// import Mint from "./Mint.jsx";
+// import Stake from "./Stake.jsx";
 import Sidebar from './Sidebar.jsx';
 
 import { Routes, Route } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function Navigator(props) {
             classname={location.pathname === "/" ? "active" : ""}
             redirectLink={"/"}
           />
-          <NavItem
+          {/* <NavItem
             IconElement={DiamondIcon}
             text="Mint Nfts"
             classname={location.pathname === "/mint" ? "active" : ""}
@@ -34,7 +34,7 @@ export default function Navigator(props) {
             text="Stake"
             classname={location.pathname === "/stake" ? "active" : ""}
             redirectLink={"/stake"}
-          />
+          /> */}
           <NavItem
             IconElement={MoreIcon}
             text="Home"
@@ -47,8 +47,8 @@ export default function Navigator(props) {
       {props.openSidebar === true && <Sidebar />}
       <Routes  basename={process.env.REACT_APP_ROUTER_BASE || ''}>
         <Route path="/" element={<Dashboard />} />
-        <Route path="mint" element={<Mint />} />
-        <Route path="stake" element={<Stake />} />
+        {/* <Route path="mint" element={<Mint />} />
+        <Route path="stake" element={<Stake />} /> */}
       </Routes>
     </main>
   );
