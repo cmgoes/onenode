@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
 // import {UseRegister, UseClaim, UseMultiplier, UseUnclaimedRewards} from "../hooks/useRegister";
 import {UseRegister, UseClaim} from "../hooks/useRegister";
 // import { UseNFTBalanceOf } from "../hooks/useMint";
@@ -12,7 +12,7 @@ import emptyComponent from "./MessageBox/EmptyComponent";
 import "../index.css";
 import fantomIcon from "../assets/fantom.png";
 
-const provider = new ethers.providers.Web3Provider(window.ethereum);
+// const provider = new ethers.providers.Web3Provider(window.ethereum);
 // const NodeContract = new ethers.Contract(NodeContractAddress, NodeContractAbi, provider);
 
 export default function RegisterNft(props) {
@@ -21,8 +21,8 @@ export default function RegisterNft(props) {
   // const balance = UseNFTBalanceOf(NodeContract, account);
   // const reward = UseUnclaimedRewards(props.contract, account);
   // const registered = UseMultiplier(props.contract, account);  
-  const balance = 1;
-  const reward = 1;
+  const balance = '1';
+  const reward = '1';
   const registered = 1;
 
   const usehandleRegister = async () => {  
