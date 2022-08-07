@@ -18,6 +18,8 @@ export default function StakeNftCard(props) {
 
   const balance = UseBalanceOf(props.approve, account);
   const reward = UseCalculateReward(props.stake, account);
+  const staked = UseCalculateStaked(props.stake, account);
+  const allowance = UseAllowance(props.approve, account, props.stakeaddress);
 
   const usehandleStake = async () => {      
     if(inputValue === 0) {
@@ -84,7 +86,7 @@ export default function StakeNftCard(props) {
         </div>
         <div className="dataItem">
           <div className="dataItemHeader">Staked:</div>
-          <div className="dataItemVal">{UseCalculateStaked(props.stake, account)}</div>
+          <div className="dataItemVal">{staked}</div>
         </div>
         <div className="claimRewardsCntr">
           <div className="claimRewardsData">
@@ -99,7 +101,7 @@ export default function StakeNftCard(props) {
           <input className="stakeInput" value={inputValue} onChange={handleInput} placeholder="Enter Amount"></input>
         </div>
         <div className={"stakeBtnCntr"}>
-          {UseAllowance(props.approve, account, props.stakeaddress) > inputValue?           
+          {allowance > inputValue?           
           <div className="btn claim" onClick={usehandleStake}>Stake</div> :
           [account? <div className="btn claim" onClick={usehandleApprove}>Approve</div> : <div className="btn claim">Approve</div>]}            
           {account? <div className="btn claim" onClick={usehandleUnstake}>Unstake</div> : <div className="btn claim">Unstake</div>}

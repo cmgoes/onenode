@@ -17,6 +17,7 @@ export default function MintNftCard(props) {
     const [waitingBox, setWaitingBox] = useState(emptyComponent);
     const balance = UseBalanceOf(PumpkinContract, account);
     const nftbalance = UseNFTBalanceOf(props.contract, account);
+    const allowance = UseAllowance(PumpkinContract, account, props.mintaddress);
     const usehandleApprove = async () => {                 
         await UseApprove(PumpkinContract, props.mintaddress, constants.MaxUint256);             
     };
@@ -49,10 +50,10 @@ export default function MintNftCard(props) {
                 {waitingBox}
                 <div className="dataItem">
                     <div className="dataItemHeader">Minted:</div>
-                    {!props.upcoming? <div className="dataItemVal">{UseNFTBalanceOf(props.contract, account)}</div> :                     
+                    {!props.upcoming? <div className="dataItemVal">{nftbalance}</div> :                     
                     <div className="dataItemVal"></div>}
                 </div>                
-                {!UseAllowance(PumpkinContract, account, props.mintaddress) > 0 ? 
+                {!allowance > 0 ? 
                     <div className={"btn fantom"} style={{borderRadius: "5px", "display":"flex", justifyContent: "center"}} onClick={usehandleApprove}>
                         Approve
                     </div> : props.upcoming ? <div className={"btn fantom"} style={{borderRadius: "5px", "display":"flex", justifyContent: "center", pointerEvents: 'none'}}>

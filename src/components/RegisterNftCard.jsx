@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import { ethers } from "ethers";
 import {UseRegister, UseClaim, UseMultiplier, UseUnclaimedRewards} from "../hooks/useRegister";
 import { UseNFTBalanceOf } from "../hooks/useMint";
@@ -19,9 +19,7 @@ export default function RegisterNft(props) {
   const [waitingBox, setWaitingBox] = useState(emptyComponent);
   const balance = UseNFTBalanceOf(NodeContract, account);
   const reward = UseUnclaimedRewards(props.contract, account);
-  const registered = UseMultiplier(account, props.contract);
-  console.log('balance', balance);
-  console.log('reward', reward);
+  const registered = UseMultiplier(account, props.contract);  
 
   const usehandleRegister = async () => {  
     if(balance === '0') {
@@ -44,6 +42,8 @@ export default function RegisterNft(props) {
       await UseClaim(props.contract);
     }                  
   };
+
+
   return (
     <div className="cardContainer">
       <div className="cardHeading">
