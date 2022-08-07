@@ -10,7 +10,7 @@ export const UseClaim = async (contract) => {
   await contract.connect(provider.getSigner()).Claim();   
 }
 
-export const UseMultiplier = (account, contract) => {
+export const UseMultiplier = (contract, account) => {
   const [totalMultiplier, setTotalMultiplier] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
