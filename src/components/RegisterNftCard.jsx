@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import { ethers } from "ethers";
 // import {UseRegister, UseClaim, UseMultiplier, UseUnclaimedRewards} from "../hooks/useRegister";
-import {UseRegister, UseClaim} from "../hooks/useRegister";
+// import {UseRegister, UseClaim} from "../hooks/useRegister";
 // import { UseNFTBalanceOf } from "../hooks/useMint";
 import useMetaMask from "../hooks/useMetamask";
 // import NodeContractAbi from "../constants/abis/node.json";
@@ -32,7 +32,7 @@ export default function RegisterNft(props) {
         setWaitingBox(emptyComponent)
       }, 1000);
     } else {
-      await UseRegister(props.contract);
+      // await UseRegister(props.contract);
     }            
   };
 
@@ -43,7 +43,7 @@ export default function RegisterNft(props) {
         setWaitingBox(emptyComponent)
       }, 1000);
     } else {
-      await UseClaim(props.contract);
+      // await UseClaim(props.contract);
     }                  
   };
 
