@@ -1,10 +1,10 @@
 import { useEthers } from "@usedapp/core";
 
 const useMetaMask = () => {
-  const { activateBrowserWallet, account, deactivate } = useEthers();
+  const { activate, account, deactivate } = useEthers();
 
   return {
-    activateBrowserWallet,
+    activate,
     account,
     deactivate,
   };
